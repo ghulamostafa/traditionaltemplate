@@ -22,7 +22,7 @@ namespace MGas.Utility
         /// <param name="message">Output parameter message. String</param>
         /// <param name="_paramaters">paramWithValues array</param>
         /// <returns></returns>
-        public bool runProcedureInsert(string _procedure, string _action, string lang, ref int result, ref string message, params paramWithValues[] _paramaters)
+        public bool runProcedureInsert(string _procedure, string _action, ref int result, ref string message, params paramWithValues[] _paramaters)
         {
             using (SqlConnection con = new SqlConnection(SPConstr))
             {
@@ -30,7 +30,6 @@ namespace MGas.Utility
                 {
                     cmd.CommandType = System.Data.CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@Action", _action);
-                    cmd.Parameters.AddWithValue("@lang", lang);
                     cmd.Parameters.Add("@result", SqlDbType.BigInt).Direction = ParameterDirection.Output;
                     cmd.Parameters.Add("@message", SqlDbType.NVarChar, 150).Direction = ParameterDirection.Output;
 
@@ -82,7 +81,7 @@ namespace MGas.Utility
         /// <param name="additional">Output parameter additional to message. String</param>
         /// <param name="_paramaters">paramWithValues array</param>
         /// <returns></returns>
-        public bool runProcedureInsert(string _procedure, string _action, string lang, ref int result, ref string message, ref string additional, params paramWithValues[] _paramaters)
+        public bool runProcedureInsert(string _procedure, string _action, ref int result, ref string message, ref string additional, params paramWithValues[] _paramaters)
         {
             using (SqlConnection con = new SqlConnection(SPConstr))
             {
@@ -90,7 +89,6 @@ namespace MGas.Utility
                 {
                     cmd.CommandType = System.Data.CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@Action", _action);
-                    cmd.Parameters.AddWithValue("@lang", lang);
                     cmd.Parameters.Add("@result", SqlDbType.BigInt).Direction = ParameterDirection.Output;
                     cmd.Parameters.Add("@message", SqlDbType.NVarChar, 150).Direction = ParameterDirection.Output;
                     cmd.Parameters.Add("@additional", SqlDbType.VarChar, 50).Direction = ParameterDirection.Output;
