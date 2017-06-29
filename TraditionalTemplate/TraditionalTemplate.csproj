@@ -43,11 +43,27 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FirebaseNet, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FirebaseNet.1.0.1\lib\net45\FirebaseNet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.0.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -67,6 +83,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+    <Content Include="Resources\bootstrap\css\bootstrap-theme.css.map" />
+    <Content Include="Resources\bootstrap\css\bootstrap-theme.min.css.map" />
+    <Content Include="Resources\bootstrap\css\bootstrap.css.map" />
+    <Content Include="Resources\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="Resources\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Resources\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Resources\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Resources\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Resources\LoginMaster.Master" />
+    <Content Include="Resources\MasterPage.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -75,10 +101,96 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Admin\Default.aspx" />
+    <Content Include="Admin\UserLogin.aspx" />
+    <Content Include="Resources\bootstrap\css\bootstrap-theme.css" />
+    <Content Include="Resources\bootstrap\css\bootstrap-theme.min.css" />
+    <Content Include="Resources\bootstrap\css\bootstrap.css" />
+    <Content Include="Resources\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Resources\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Resources\bootstrap\js\bootstrap.js" />
+    <Content Include="Resources\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Resources\bootstrap\js\jquery.min.js" />
+    <Content Include="Resources\bootstrap\js\npm.js" />
+    <Content Include="Resources\Icons\00_alarm.png" />
+    <Content Include="Resources\Icons\00_attachment.png" />
+    <Content Include="Resources\Icons\00_edit.png" />
+    <Content Include="Resources\Icons\00_error.png" />
+    <Content Include="Resources\Icons\00_feedback.png" />
+    <Content Include="Resources\Icons\00_flats.png" />
+    <Content Include="Resources\Icons\00_link.png" />
+    <Content Include="Resources\Icons\00_minus.png" />
+    <Content Include="Resources\Icons\00_plus.png" />
+    <Content Include="Resources\Icons\00_primary_distributors.png" />
+    <Content Include="Resources\Icons\00_Reports.png" />
+    <Content Include="Resources\Icons\00_rotate.png" />
+    <Content Include="Resources\Icons\00_save.png" />
+    <Content Include="Resources\Icons\00_search_icon.png" />
+    <Content Include="Resources\Icons\00_users.png" />
+    <Content Include="Resources\Icons\00_view.png" />
+    <Content Include="Resources\Icons\user-4.png" />
+    <Content Include="Resources\Icons\user-7.png" />
+    <Content Include="Resources\styles\mgas-custom.css" />
+    <Content Include="Resources\UserControl\mDatePicker.ascx" />
+    <Content Include="Resources\UserControl\mPopupDisplay.ascx" />
+    <Content Include="Resources\UserControl\mSearchPanel.ascx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UserLogin.aspx.cs">
+      <DependentUpon>UserLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\UserLogin.aspx.designer.cs">
+      <DependentUpon>UserLogin.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\LoginMaster.Master.cs">
+      <DependentUpon>LoginMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Resources\LoginMaster.Master.designer.cs">
+      <DependentUpon>LoginMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\MasterPage.Master.cs">
+      <DependentUpon>MasterPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Resources\MasterPage.Master.designer.cs">
+      <DependentUpon>MasterPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\UserControl\mDatePicker.ascx.cs">
+      <DependentUpon>mDatePicker.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Resources\UserControl\mDatePicker.ascx.designer.cs">
+      <DependentUpon>mDatePicker.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\UserControl\mPopupDisplay.ascx.cs">
+      <DependentUpon>mPopupDisplay.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Resources\UserControl\mPopupDisplay.ascx.designer.cs">
+      <DependentUpon>mPopupDisplay.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\UserControl\mSearchPanel.ascx.cs">
+      <DependentUpon>mSearchPanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Resources\UserControl\mSearchPanel.ascx.designer.cs">
+      <DependentUpon>mSearchPanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\FCM.cs" />
+    <Compile Include="Utility\myUtility.cs" />
+    <Compile Include="Utility\paramWithValues.cs" />
+    <Compile Include="Utility\ResponseClass.cs" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
